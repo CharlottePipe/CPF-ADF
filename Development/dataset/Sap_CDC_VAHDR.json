@@ -1,0 +1,20 @@
+{
+	"name": "Sap_CDC_VAHDR",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SapOdp_Sanbox",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SAP_CDC"
+		},
+		"annotations": [],
+		"type": "SapOdpResource",
+		"schema": [],
+		"typeProperties": {
+			"context": "SAPI",
+			"objectName": "2LIS_11_VAHDR"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,7 @@
+{
+	"name": "IR-SAPECC",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Integration Runtime for SAPECC"
+	}
+}

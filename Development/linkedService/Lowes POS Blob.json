@@ -1,0 +1,17 @@
+{
+	"name": "Lowes POS Blob",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Contains daily file from Lowes POS data ",
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=charlotte0pipe0metastore;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkZTUyM2QzNS1lYmM5LTQ3NGQtYTVkMC03MDQ4ZDI4YTY5ODQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IR-SAPECC",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

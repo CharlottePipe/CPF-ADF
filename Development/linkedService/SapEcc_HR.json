@@ -1,0 +1,25 @@
+{
+	"name": "SapEcc_HR",
+	"properties": {
+		"annotations": [],
+		"type": "SapEcc",
+		"typeProperties": {
+			"url": "http://drsept01.charlottepie.com:1080",
+			"username": "cpfiuser",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "keyvault_cpf_dev",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sap-password-dev",
+				"secretVersion": "519e63f5abc7418ab01552464a673a8b"
+			}
+		},
+		"connectVia": {
+			"referenceName": "IR-SAPECC",
+			"type": "IntegrationRuntimeReference"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
+}

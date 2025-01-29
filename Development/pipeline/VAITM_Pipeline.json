@@ -1,0 +1,44 @@
+{
+	"name": "VAITM_Pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "VAITM_Dataflow",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "VAITM_Dataflow",
+						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "charlotte0pipe0metastore",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "staging/VAITM_CDC_Stage"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine",
+					"continuationSettings": {
+						"customizedCheckpointKey": "1edaa062-bf11-4a22-b8aa-93caf35a074d"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-11-21T17:55:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
