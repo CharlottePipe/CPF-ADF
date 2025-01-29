@@ -1,0 +1,19 @@
+{
+	"name": "HR_PA0006",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SapTable1_HR",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SAP_Table"
+		},
+		"annotations": [],
+		"type": "SapTableResource",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "PA0006"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

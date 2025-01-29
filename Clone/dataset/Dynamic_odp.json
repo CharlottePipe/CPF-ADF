@@ -1,0 +1,29 @@
+{
+	"name": "Dynamic_odp",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SapOdp_Sanbox",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TableName": {
+				"type": "string",
+				"defaultValue": "0MATERIAL_ATTR"
+			}
+		},
+		"folder": {
+			"name": "SAP_CDC"
+		},
+		"annotations": [],
+		"type": "SapOdpResource",
+		"schema": [],
+		"typeProperties": {
+			"context": "SAPI",
+			"objectName": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

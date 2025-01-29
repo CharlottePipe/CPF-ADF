@@ -1,0 +1,44 @@
+{
+	"name": "MARA_CDC",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Material_ATTTR_CDC",
+						"type": "DatasetReference"
+					},
+					"name": "OutputMaraCDC"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "MaraParquet",
+						"type": "DatasetReference"
+					},
+					"name": "MaraCDC"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     staged: true,",
+				"     readMode: 'fullAndIncrementalLoad',",
+				"     keys: ['MATNR'],",
+				"     format: 'sapObject',",
+				"     fixDecimalPrecision: true) ~> OutputMaraCDC",
+				"OutputMaraCDC sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> MaraCDC"
+			]
+		}
+	}
+}

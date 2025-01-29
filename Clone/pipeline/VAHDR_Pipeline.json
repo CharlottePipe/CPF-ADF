@@ -1,0 +1,44 @@
+{
+	"name": "VAHDR_Pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "VAHDR_Dataflow",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "VAHDR_Dataflow",
+						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "charlotte0pipe0metastore",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "staging/VAHDR_CDC_Stage"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine",
+					"continuationSettings": {
+						"customizedCheckpointKey": "c2e7120d-e424-4a74-8cdf-b96331a4ab74"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-11-21T21:46:01Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

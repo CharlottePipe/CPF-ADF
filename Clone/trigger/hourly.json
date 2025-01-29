@@ -1,0 +1,25 @@
+{
+	"name": "hourly",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "VAITM_Pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 1,
+				"startTime": "2024-11-20T00:00:00",
+				"endTime": "2024-11-22T23:59:00",
+				"timeZone": "Eastern Standard Time"
+			}
+		}
+	}
+}

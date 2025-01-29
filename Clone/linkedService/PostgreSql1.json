@@ -1,0 +1,28 @@
+{
+	"name": "PostgreSql1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "PostgreSqlV2",
+		"typeProperties": {
+			"server": "ADVPSSD02",
+			"port": 5432,
+			"database": "Pipes",
+			"username": "adf_user",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "keyvault_cpf_dev",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "postgres-pwd"
+			},
+			"sslMode": 2,
+			"authenticationType": "Basic"
+		},
+		"connectVia": {
+			"referenceName": "IR-SAPECC",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

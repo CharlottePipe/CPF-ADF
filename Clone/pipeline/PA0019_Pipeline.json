@@ -1,0 +1,456 @@
+{
+	"name": "PA0019_Pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "CopyPA0019",
+				"description": "Extract full data from sap table PA0000",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SapTableSource",
+						"rfcTableOptions": "",
+						"customRfcReadTableFunctionModule": "",
+						"rfcTableFields": "AEDTM,BEGDA,BVMRK,ENDDA,FLAG1,FLAG2,FLAG3,FLAG4,GRPVL,HISTO,ITBLD,ITXEX,MNDAT,MNJHR,MNMON,MNTAG,OBJPS,ORDEX,PERNR,PREAS,REFEX,RESE1,RESE2,SEQNR,SPRPS,SUBTY,TERMN,TMART,TMJHR,TMMON,TMTAG,UNAME",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "AEDTM",
+									"type": "String",
+									"physicalType": "D"
+								},
+								"sink": {
+									"name": "AEDTM",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "BEGDA",
+									"type": "String",
+									"physicalType": "D"
+								},
+								"sink": {
+									"name": "BEGDA",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "BVMRK",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "BVMRK",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "ENDDA",
+									"type": "String",
+									"physicalType": "D"
+								},
+								"sink": {
+									"name": "ENDDA",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "FLAG1",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "FLAG1",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "FLAG2",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "FLAG2",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "FLAG3",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "FLAG3",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "FLAG4",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "FLAG4",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "GRPVL",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "GRPVL",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "HISTO",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "HISTO",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "ITBLD",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "ITBLD",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "ITXEX",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "ITXEX",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "MNDAT",
+									"type": "String",
+									"physicalType": "D"
+								},
+								"sink": {
+									"name": "MNDAT",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "MNJHR",
+									"type": "String",
+									"physicalType": "N"
+								},
+								"sink": {
+									"name": "MNJHR",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "MNMON",
+									"type": "String",
+									"physicalType": "N"
+								},
+								"sink": {
+									"name": "MNMON",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "MNTAG",
+									"type": "String",
+									"physicalType": "N"
+								},
+								"sink": {
+									"name": "MNTAG",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "OBJPS",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "OBJPS",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "ORDEX",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "ORDEX",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "PERNR",
+									"type": "String",
+									"physicalType": "N"
+								},
+								"sink": {
+									"name": "PERNR",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "PREAS",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "PREAS",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "REFEX",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "REFEX",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "RESE1",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "RESE1",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "RESE2",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "RESE2",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "SEQNR",
+									"type": "String",
+									"physicalType": "N"
+								},
+								"sink": {
+									"name": "SEQNR",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "SPRPS",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "SPRPS",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "SUBTY",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "SUBTY",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "TERMN",
+									"type": "String",
+									"physicalType": "D"
+								},
+								"sink": {
+									"name": "TERMN",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "TMART",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "TMART",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "TMJHR",
+									"type": "String",
+									"physicalType": "N"
+								},
+								"sink": {
+									"name": "TMJHR",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "TMMON",
+									"type": "String",
+									"physicalType": "N"
+								},
+								"sink": {
+									"name": "TMMON",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "TMTAG",
+									"type": "String",
+									"physicalType": "N"
+								},
+								"sink": {
+									"name": "TMTAG",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "UNAME",
+									"type": "String",
+									"physicalType": "C"
+								},
+								"sink": {
+									"name": "UNAME",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "HR_PA0019",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "HR_PA0019_Parquet",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"LastRunTime": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "HR_Analytics"
+		},
+		"annotations": []
+	}
+}

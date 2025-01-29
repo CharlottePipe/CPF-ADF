@@ -1,0 +1,14 @@
+{
+	"name": "dbstorage3u2ufqprtrjhw",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://dbstorage3u2ufqprtrjhw.dfs.core.windows.net/"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

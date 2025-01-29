@@ -1,0 +1,23 @@
+{
+	"name": "HR_PA2006_Parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "charlotte0pipe0metastore",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "ADLS_Destinations"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "HR_Analytics/pa2006",
+				"fileSystem": "raw-data"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
